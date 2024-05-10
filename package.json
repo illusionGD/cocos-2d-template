@@ -1,0 +1,10 @@
+{
+  "name": "cocos-2d-template",
+  "uuid": "cd950e12-6833-4105-af5f-2ce9efdc74cb",
+  "creator": {
+    "version": "3.8.2"
+  },
+  "dependencies": {
+    "qs": "^6.12.1"
+  }
+}
