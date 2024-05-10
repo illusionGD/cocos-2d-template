@@ -1,7 +1,6 @@
 import qs from 'qs'
 import { isPlainObject } from '../uitls'
 
-const baseURL = ''
 const inital = {
     method: 'GET',
     params: null,
@@ -30,7 +29,10 @@ interface REQUEST_TYPE {
     responseType?: RESPONSE_TYPE
 }
 
-export default function request(url: string, config?: REQUEST_TYPE) {
+export default function fetchRequest<T>(
+    url: string,
+    config?: REQUEST_TYPE
+): Promise<T> {
     // init params
     if (typeof url !== 'string')
         throw new TypeError('url must be required and of string type')
@@ -40,9 +42,6 @@ export default function request(url: string, config?: REQUEST_TYPE) {
 
     let { method, params, body, headers, cache, credentials, responseType } =
         config
-
-    // 处理URL：请求前缀 & 问号参数
-    if (!/^http(s?):\/\//i.test(url)) url = baseURL + url
 
     if (params != null) {
         if (isPlainObject(params)) params = qs.stringify(params)

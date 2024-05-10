@@ -10,7 +10,10 @@ const defaultConfig = {
 }
 let count = 0
 
-export default function jsonp(url, opts: JsonpConfigType) {
+export default function jsonp<T>(url, opts: JsonpConfigType): Promise<T> {
+    if (!window) {
+        return Promise.reject('it is not browser env!')
+    }
     // 实现Promise化
     return new Promise((resolve, reject) => {
         //设置默认参数
