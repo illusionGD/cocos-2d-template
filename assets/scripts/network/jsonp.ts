@@ -1,3 +1,13 @@
+/*
+ * @Author: IT-hollow
+ * @Date: 2024-05-10 23:06:28
+ * @LastEditors: hollow
+ * @LastEditTime: 2024-05-22 22:33:26
+ * @FilePath: \cocos-2d-template\assets\scripts\network\jsonp.ts
+ * @Description: jsonp封装
+ *
+ * Copyright (c) 2024 by efun, All Rights Reserved.
+ */
 import { isInvalidVal, isPlainObject } from '../uitls'
 
 interface JsonpConfigType {

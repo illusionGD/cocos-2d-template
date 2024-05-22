@@ -1,0 +1,3 @@
+const globalData = {}
+
+export { globalData }
